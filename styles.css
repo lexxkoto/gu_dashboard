@@ -1,0 +1,102 @@
+.block_gu_dashboard {
+  background-color: transparent;
+}
+
+.block_gu_dashboard .nav-tabs {
+    margin-bottom: 20px;
+}
+
+.block_gu_dashboard .event-list-item {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.block_gu_dashboard .event-list-item:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.block_gu_dashboard .event-list-item .event-icon {
+  vertical-align: middle;
+}
+
+.block_gu_dashboard .event-list-item .event-icon::before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.block_gu_dashboard .courses-view-course-item {
+    background: transparent;
+    border: none;
+}
+
+.block_gu_dashboard .course-list-title {
+    background-color: #eee;
+    border-bottom: 1px solid #ddd;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.block_gu_dashboard .course-list-title a {
+    color: #555 !important;
+}
+
+.block_gu_dashboard .course-list-title a.course-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: calc(100% - 25px);
+    display: block;
+}
+
+.block_gu_dashboard .progress-chart-container {
+    float: left;
+    margin-right: 10px;
+}
+
+.block_gu_dashboard .pin-icon {
+    float: right;
+    text-decoration: none !important;
+}
+
+.block_gu_dashboard .pin-icon.pinned {
+    color: #27ae60 !important;
+    transform: rotate(45deg);
+}
+
+.block_gu_dashboard .progress-chart-container {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0 !important;
+}
+
+.block_gu_dashboard .course-summary p {
+    margin-bottom: 0;
+    height: 4.5rem;
+    overflow: hidden;
+}
+
+.block_gu_dashboard .progress-chart-container .progress-doughnut,
+.block_gu_dashboard .progress-chart-container .no-progress {
+    width: 60px;
+    height: 60px;
+}
+
+.block_gu_dashboard .progress-chart-container .no-progress img {
+    width: 40px;
+    height: 40px;
+}
+
+.block_gu_dashboard .progress-chart-container .progress-doughnut .progress-text.has-percent {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.block_gu_dashboard .empty-placeholder-image-lg {
+    width: 100px;
+    height: 100px;
+}

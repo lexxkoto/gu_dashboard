@@ -1,0 +1,58 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_gu_dashboard/pinned-view
+
+    This template renders the courses view for the myoverview block.
+
+    Example context (json):
+    {}
+}}
+<div id="pinned-view-{{uniqid}}" data-region="courses-view">
+    <div class="gu-course-list">
+        <div class="tab-pane active fade in" id="myoverview_courses_view_in_progress">
+            {{#pinnedview}}
+                {{< block_gu_dashboard/courses-view }}
+                    {{$id}}courses-view{{/id}}
+                    {{$courses}}{{pinned}}{{/courses}}
+                    {{$status}}1{{/status}}
+                    {{$pagingbarid}}pb-for-pinned{{/pagingbarid}}
+                    {{$pagingcontentid}}pc-for-pinned{{/pagingcontentid}}
+                {{/ block_gu_dashboard/courses-view }}
+            {{/pinnedview}}
+            {{^pinnedview}}
+                NO PINNED COURSES WHAT?!?
+                <div class="text-xs-center text-center m-t-3">
+                    <img class="empty-placeholder-image-lg"
+                         src="{{urls.nocourses}}"
+                         alt=""
+                         role="presentation">
+                    <p class="text-muted m-t-1">{{#str}} nopinned, block_gu_dashboard {{/str}}</p>
+                </div>
+            {{/pinnedview}}
+        </div>
+    </div>
+</div>
+{{#js}}
+require(['jquery', 'core/custom_interaction_events'], function($, customEvents) {
+    var root = $('#courses-view-{{uniqid}}');
+    customEvents.define(root, [customEvents.events.activate]);
+    root.on(customEvents.events.activate, '[data-toggle="btns"] > .btn', function() {
+        root.find('.btn.active').removeClass('active');
+    });
+});
+{{/js}}
